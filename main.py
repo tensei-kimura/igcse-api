@@ -15,22 +15,31 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Predefined question templates and content
+# Extended question templates and content for more variety
 TEMPLATES = {
     "Physics": [
         ("What is Newton's {law} law of motion?",
          "Newton's {law} law states that {content}.",
-         "This means that {explanation}.")
+         "This means that {explanation}."),
+        ("Why does a balloon expand when heated?",
+         "A balloon expands when heated because {content}.",
+         "This is due to {explanation}.")
     ],
     "Chemistry": [
         ("What is the chemical formula of {substance}?",
          "The formula is {formula}.",
-         "This is because it contains {elements}.")
+         "This is because it contains {elements}."),
+        ("Why is water a good solvent?",
+         "Water is a good solvent because {content}.",
+         "This is due to {explanation}.")
     ],
     "Biology": [
         ("What is the function of the {organelle}?",
          "The {organelle} is responsible for {function}.",
-         "It plays a key role in {biological_process}.")
+         "It plays a key role in {biological_process}."),
+        ("How do enzymes affect reactions?",
+         "Enzymes affect reactions by {content}.",
+         "This helps in {explanation}.")
     ]
 }
 
@@ -39,15 +48,43 @@ FILL_VALUES = {
     "content": [
         "an object in motion stays in motion unless acted upon",
         "force equals mass times acceleration",
-        "every action has an equal and opposite reaction"
+        "every action has an equal and opposite reaction",
+        "heating increases kinetic energy of particles",
+        "polar molecules dissolve other polar molecules",
+        "lowering the activation energy"
     ],
-    "explanation": ["forces occur in pairs", "objects resist changes", "motion results from interactions"],
-    "substance": ["water", "carbon dioxide", "sodium chloride"],
-    "formula": ["H2O", "CO2", "NaCl"],
-    "elements": ["hydrogen and oxygen", "carbon and oxygen", "sodium and chlorine"],
-    "organelle": ["nucleus", "mitochondria", "ribosome"],
-    "function": ["controlling cell activities", "producing energy", "synthesizing proteins"],
-    "biological_process": ["metabolism", "respiration", "protein synthesis"]
+    "explanation": [
+        "forces occur in pairs",
+        "objects resist changes",
+        "motion results from interactions",
+        "particles move faster and exert more pressure",
+        "water's polarity allows it to surround ions",
+        "faster reaction rates"
+    ],
+    "substance": ["water", "carbon dioxide", "sodium chloride", "ammonia", "glucose"],
+    "formula": ["H2O", "CO2", "NaCl", "NH3", "C6H12O6"],
+    "elements": [
+        "hydrogen and oxygen",
+        "carbon and oxygen",
+        "sodium and chlorine",
+        "nitrogen and hydrogen",
+        "carbon, hydrogen, and oxygen"
+    ],
+    "organelle": ["nucleus", "mitochondria", "ribosome", "chloroplast", "cell membrane"],
+    "function": [
+        "controlling cell activities",
+        "producing energy",
+        "synthesizing proteins",
+        "photosynthesis",
+        "regulating transport"
+    ],
+    "biological_process": [
+        "metabolism",
+        "respiration",
+        "protein synthesis",
+        "photosynthesis",
+        "homeostasis"
+    ]
 }
 
 # Utility to capitalize first letter
